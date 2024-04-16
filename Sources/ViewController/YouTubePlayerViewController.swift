@@ -24,7 +24,7 @@ public final class YouTubePlayerViewController: YouTubePlayerBaseViewController 
     /// The YouTubePlayer
     public let player: YouTubePlayer
 
-    var closeButton: UIButton?
+    public var closeButton: UIButton?
     
     // MARK: Initializer
     
