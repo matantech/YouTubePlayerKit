@@ -23,6 +23,14 @@ public final class YouTubePlayerViewController: YouTubePlayerBaseViewController 
     
     /// The YouTubePlayer
     public let player: YouTubePlayer
+
+    private let closeButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setTitle("video_close_btn".localized, for: .normal)
+        button.titleLabel?.font = UIFont(name: AppInstance.shared.appFontRegular, size: 18)
+        button.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
+        return button
+    }()
     
     // MARK: Initializer
     
@@ -69,6 +77,22 @@ public final class YouTubePlayerViewController: YouTubePlayerBaseViewController 
     /// Creates the view that the controller manages
     public override func loadView() {
         self.view = self.player.webView
+        addCloseButton()
+    }
+
+    private func addCloseButton() {
+        view.addSubview(closeButton)
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+            closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+        ])
+    }
+    
+    // MARK: Action
+    
+    @objc private func closeButtonTapped() {
+        dismiss(animated: true, completion: nil)
     }
     
 }
