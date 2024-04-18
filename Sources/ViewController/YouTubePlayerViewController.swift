@@ -77,6 +77,7 @@ public final class YouTubePlayerViewController: YouTubePlayerBaseViewController 
     private func addCloseButton() {
         if let closeButton {
         view.addSubview(closeButton)
+        closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
