@@ -80,7 +80,7 @@ public final class YouTubePlayerViewController: YouTubePlayerBaseViewController 
         closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 40),
             closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
         }
